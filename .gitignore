@@ -1,3 +1,5 @@
 local_settings.py.example
 __pycache__
 venv3
+local_settings.py
+__pycache__
