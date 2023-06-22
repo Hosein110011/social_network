@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # installed apps
     'rest_framework','rest_framework_simplejwt',
     # my apps
-    'accounts', 'posts',
+    'accounts', 'posts','friendship',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Post , Comment
+from .models import Post , Comment, Like
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -18,3 +18,19 @@ class CommentSerializer(serializers.ModelSerializer):
         'post': {'read_only': True},
         'user': {'read_only': True}
     }
+
+class LikeSerializer(serializers.ModelSerializer):
+    post = serializers.SerializerMethodField(read_only=True)
+
+
+    class Meta:
+        model = Like
+        fields = ('post', 'user', 'is_liked')
+        extra_kwargs = {
+            # 'post':{'read_only': True},
+            'user':{'read_only': True},
+            'is_liked':{'required': False}
+        }
+
+
+
